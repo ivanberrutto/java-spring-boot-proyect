@@ -20,6 +20,13 @@ public class RunRepository {
         return runs.stream().filter(run -> run.id()==id).findFirst();
     }
 
+    void create(Run run) {
+        runs.add(run);
+    }
+    void update(Run run) {
+        runs.set(runs.indexOf(run), run);
+    }
+
     List<Run> findAll(){
         return runs;
     }
@@ -30,7 +37,7 @@ public class RunRepository {
             LocalDateTime.now(),
             LocalDateTime.now().plusHours(1),
             2,
-            Location.INDOOR);
+            INDOOR);
 
         runs.add(examplerun);
 
