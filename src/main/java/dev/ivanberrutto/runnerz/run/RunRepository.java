@@ -2,6 +2,7 @@ package dev.ivanberrutto.runnerz.run;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -23,8 +24,13 @@ public class RunRepository {
     void create(Run run) {
         runs.add(run);
     }
-    void update(Run run) {
-        runs.set(runs.indexOf(run), run);
+    void update(@RequestBody Run run, Integer id) {
+        Optional <Run> existingRun = findById(id);
+        existingRun.ifPresent(value -> runs.set(runs.indexOf(value), run));
+    }
+
+    void delete(Integer id) {
+        runs.removeIf(run -> run.id()==id);
     }
 
     List<Run> findAll(){
