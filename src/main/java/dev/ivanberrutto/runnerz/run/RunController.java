@@ -15,11 +15,16 @@ public class RunController {
 
 
 
+
     private final RunRepository runRepository;
     public RunController(RunRepository runRepository) {
         this.runRepository = runRepository;
     }
 
+    List<Run> findALL(){
+        return runRepository.findAll();
+    }
+    /*
     @GetMapping("")
     List<Run> findall(){
         return runRepository.findAll();
@@ -54,5 +59,5 @@ public class RunController {
         runRepository.delete(id);
     }
 
-
+    */
 }
