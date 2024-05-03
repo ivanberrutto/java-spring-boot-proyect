@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @Repository
 public class JdbcClientRunRepository {
+    /*
     private final JdbcClient jdbcClient;
 
     public JdbcClientRunRepository(JdbcClient jdbcClient) {
@@ -67,7 +68,7 @@ public class JdbcClientRunRepository {
                 .query(Run.class)
                 .list();
     }
-
+    */
     /*
     private List<Run> runs = new ArrayList<>();
 
