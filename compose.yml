@@ -4,6 +4,6 @@ services:
     environment:
       - 'POSTGRES_DB=runnerz'
       - 'POSTGRES_PASSWORD=password'
-      - 'POSTGRES_USER=dan'
+      - 'POSTGRES_USER=ivanberrutto'
     ports:
       - '5432:5432'
