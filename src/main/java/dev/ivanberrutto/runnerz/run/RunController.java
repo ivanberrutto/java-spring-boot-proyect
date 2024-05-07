@@ -51,12 +51,13 @@ public class RunController {
     void delete(@PathVariable Integer id) {
         runRepository.delete(runRepository.findById(id).get());
     }
-    /*
-    List<Run> findByLocation(@RequestParam String location) {
-        return runRepository.findByLocation(location);
+
+    @GetMapping("/location/{location}")
+    List<Run> findByLocation(@PathVariable String location) {
+        return runRepository.findByLocation(Location.valueOf(location));
     }
 
-     */
+
     /*
     @GetMapping("")
     List<Run> findall(){
