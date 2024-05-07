@@ -1,5 +1,4 @@
 package dev.ivanberrutto.runnerz.run;
-
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.Assert;
@@ -7,13 +6,12 @@ import org.springframework.util.Assert;
 import java.util.List;
 import java.util.Optional;
 
-
 @Repository
-public class JdbcClientRunRepository {
-    /*
+public class JdbcRunRepository implements RunRepository {
+
     private final JdbcClient jdbcClient;
 
-    public JdbcClientRunRepository(JdbcClient jdbcClient) {
+    public JdbcRunRepository(JdbcClient jdbcClient) {
         this.jdbcClient = jdbcClient;
     }
 
@@ -68,41 +66,5 @@ public class JdbcClientRunRepository {
                 .query(Run.class)
                 .list();
     }
-    */
-    /*
-    private List<Run> runs = new ArrayList<>();
 
-    Optional<Run> findById(int id) {
-        return runs.stream().filter(run -> run.id()==id).findFirst();
-    }
-
-    void create(Run run) {
-        runs.add(run);
-    }
-    void update(@RequestBody Run run, Integer id) {
-        Optional <Run> existingRun = findById(id);
-        existingRun.ifPresent(value -> runs.set(runs.indexOf(value), run));
-    }
-
-    void delete(Integer id) {
-        runs.removeIf(run -> run.id()==id);
-    }
-
-    List<Run> findAll(){
-        return runs;
-    }
-    @PostConstruct
-    public void init(){
-        Run examplerun = new Run(1,
-            "A Round in the Apple",
-            LocalDateTime.now(),
-            LocalDateTime.now().plusHours(1),
-            2,
-            INDOOR);
-
-        runs.add(examplerun);
-
-    }
-
-     */
 }
